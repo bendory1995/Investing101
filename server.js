@@ -2,21 +2,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
-const mysql = require('mysql');
-const cors = require('cors');
 
 const users = require("./routes/api/users");
+const watchlists = require("./routes/api/watchlists");
+const stocks = require("./routes/api/stocks");
 
 const app = express();
-
-const SELECT_ALL_STOCKS_QUERY = 'SELECT * FROM stocks';
-const connection = mysql.createConnection({
-     host: 'localhost',
-     user: 'root',
-     password: 'root',
-     database: 'investing_db'
-});
-
 
 // Bodyparser middleware
 app.use(
@@ -46,25 +37,8 @@ require("./config/passport")(passport);
 
 // Routes
 app.use("/api/users", users);
-
-app.use(cors());
-
-app.get('/', (req,res) => {
-  res.send('go to /api/stocks')
-});
-
-app.get('/api/stocks', (req,res) => {
-  connection.query(SELECT_ALL_STOCKS_QUERY, (err,results) => {
-      if (err){
-          return res.send(err);
-      }
-      else{
-          return res.json({
-              data: results
-          })
-      }
-  });
-})
+app.use("/api/watchlists", watchlists);
+app.use("/api/stocks", stocks);
 
 const port = process.env.PORT || 5000;
 

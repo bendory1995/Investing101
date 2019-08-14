@@ -1,3 +1,20 @@
+// Authentication
 export const GET_ERRORS = "GET_ERRORS";
 export const USER_LOADING = "USER_LOADING";
 export const SET_CURRENT_USER = "SET_CURRENT_USER";
+
+// Watchlists
+export const CREATE_WATCHLIST = "CREATE_WATCHLIST";
+export const UPDATE_WATCHLIST = "UPDATE_WATCHLIST";
+export const DELETE_WATCHLIST = "DELETE_WATCHLIST";
+export const GET_WATCHLIST = "GET_WATCHLIST";
+export const WATCHLIST_LOADING = "WATCHLIST_LOADING";
+export const GET_WATCHLISTS = "GET_WATCHLISTS";
+export const WATCHLISTS_LOADING = "WATCHLISTS_LOADING";
+
+// Stocks
+export const CREATE_STOCK = "CREATE_STOCK";
+export const UPDATE_STOCK = "UPDATE_STOCK";
+export const DELETE_STOCK = "DELETE_STOCK";
+export const GET_STOCKS = "GET_STOCKS";
+export const STOCKS_LOADING = "STOCKS_LOADING";

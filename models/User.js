@@ -18,14 +18,6 @@ const UserSchema = new Schema({
   date: {
     type: Date,
     default: Date.now
-  },
-  sector: {
-    type: String,
-    required: false
-  },
-  risk: {
-    type: String,
-    required: false
   }
 });
 
